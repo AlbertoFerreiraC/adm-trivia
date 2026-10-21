@@ -1,0 +1,32 @@
+RewriteEngine On
+Options -Indexes
+
+# El archivo de entorno nunca debe publicarse por HTTP.
+RewriteRule ^claves\.env$ - [F,L,NC]
+
+# Permitir acceso directo a archivos reales (como imágenes en uploads/)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Enrutar peticiones de la API limpia hacia los módulos correspondientes
+RewriteRule ^api/v1/auth/(.*)$ usuario/index.php?action=$1 [QSA,L]
+RewriteRule ^api/v1/admin/participants$ usuario/index.php?action=participants [QSA,L]
+
+RewriteRule ^api/v1/categories$ categoria/index.php?scope=public [QSA,L]
+RewriteRule ^api/v1/admin/categories(?:/(\d+))?$ categoria/index.php?scope=admin&id=$1 [QSA,L]
+
+RewriteRule ^api/v1/games$ partida/index.php?action=create [QSA,L]
+RewriteRule ^api/v1/games/(\d+)/current-question$ partida/index.php?action=current-question&gameId=$1 [QSA,L]
+RewriteRule ^api/v1/games/(\d+)/answers$ partida/index.php?action=answers&gameId=$1 [QSA,L]
+RewriteRule ^api/v1/games/(\d+)$ partida/index.php?action=summary&gameId=$1 [QSA,L]
+
+RewriteRule ^api/v1/rankings/(competition|general)$ informes/index.php?type=ranking&tab=$1 [QSA,L]
+RewriteRule ^api/v1/admin/errors$ informes/index.php?type=errors [QSA,L]
+
+RewriteRule ^api/v1/admin/stats$ dashboard/index.php [QSA,L]
+RewriteRule ^api/v1/admin/sessions/new$ sesiones/index.php [QSA,L]
+RewriteRule ^api/v1/admin/games$ historial/index.php [QSA,L]
+
+RewriteRule ^api/v1/admin/questions/(\d+)/image$ pregunta/index.php?action=image&id=$1 [QSA,L]
+RewriteRule ^api/v1/admin/questions(?:/(\d+))?$ pregunta/index.php?action=crud&id=$1 [QSA,L]
