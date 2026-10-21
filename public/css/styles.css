@@ -1,11 +1,30 @@
+/* Trivia de Seguridad Vial — Identidad visual Sacyr 2025 */
+
 :root {
-    --navy: #103653;
-    --teal: #009688;
-    --yellow: #ffd23f;
-    --bg: #f3f7fa;
-    --ink: #18334a;
-    --muted: #64798b;
-    --danger: #e56b60;
+    /* Paleta oficial Sacyr */
+    --sacyr-blue: #002C58;
+    --sacyr-aqua: #00AFD2;
+    --sacyr-sky: #7CCFDB;
+    --sacyr-turmeric: #F8A16E;
+    --sacyr-matcha: #9CC682;
+    --sacyr-coral: #F48382;
+    --sacyr-lavender: #8889C3;
+    --sacyr-concrete: #D5D2CA;
+    /* Alias de compatibilidad con la app */
+    --navy: var(--sacyr-blue);
+    --teal: var(--sacyr-aqua);
+    --yellow: var(--sacyr-turmeric);
+    --bg: #F6F8FA;
+    --ink: var(--sacyr-blue);
+    --muted: #53677D;
+    --danger: #AD343A;
+    /* Tonos funcionales derivados para superficies */
+    --surface: #FFFFFF;
+    --surface-soft: #ECF8FB;
+    --border: #D9E5EA;
+    --success: #28613A;
+    --success-bg: #EFF7E9;
+    --danger-bg: #FFF0F0;
 }
 
 *,
@@ -19,10 +38,9 @@ html {
     height: 100%;
 }
 
-/* Un solo body unificado y limpio */
 body {
     margin: 0;
-    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-family: Geist, Arial, sans-serif;
     background: var(--bg);
     color: var(--ink);
     min-height: 100vh;
@@ -31,9 +49,11 @@ body {
     touch-action: manipulation;
 }
 
-/* Cabecera corporativa unificada */
+
+/* Cabecera corporativa */
+
 header.app-header {
-    background: var(--navy);
+    background: var(--sacyr-blue);
     color: #fff;
     padding: 14px 4%;
     display: flex;
@@ -41,7 +61,7 @@ header.app-header {
     justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
-    box-shadow: 0 4px 14px rgba(16, 54, 83, 0.15);
+    box-shadow: 0 4px 14px rgba(0, 44, 88, 0.15);
     width: 100%;
 }
 
@@ -57,7 +77,7 @@ header.app-header {
 }
 
 .logo-wrapper {
-    background: #ffffff;
+    background: #fff;
     padding: 4px 8px;
     border-radius: 8px;
     display: flex;
@@ -79,16 +99,17 @@ header.app-header {
 }
 
 .brand span {
-    color: var(--yellow);
+    color: var(--sacyr-sky);
 }
 
 .tablet-indicator {
-    background: rgba(255, 255, 255, 0.14);
-    color: var(--yellow);
+    background: rgba(255, 255, 255, 0.13);
+    color: #fff;
     font-size: 12px;
     padding: 6px 12px;
     border-radius: 99px;
     font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 nav.main-nav {
@@ -106,6 +127,7 @@ nav.main-nav {
     cursor: pointer;
     transition: transform 0.1s ease, filter 0.15s ease;
     font-size: 14px;
+    font-family: inherit;
 }
 
 .btn-vial:active {
@@ -113,27 +135,28 @@ nav.main-nav {
 }
 
 nav.main-nav .btn-vial {
-    background: #214d6d;
+    background: #184975;
     color: #fff;
 }
 
 nav.main-nav .btn-vial.active {
-    background: var(--yellow);
-    color: var(--navy);
+    background: var(--sacyr-aqua);
+    color: var(--sacyr-blue);
 }
 
 .btn-primary-vial {
-    background: var(--yellow);
-    color: var(--navy);
+    background: var(--sacyr-aqua);
+    color: var(--sacyr-blue);
     border: 0;
     border-radius: 12px;
     padding: 12px 20px;
     font-weight: 800;
     cursor: pointer;
     width: 100%;
+    font-family: inherit;
 }
 
-@media(min-width: 480px) {
+@media (min-width: 480px) {
     .btn-primary-vial {
         width: auto;
     }
@@ -144,37 +167,40 @@ nav.main-nav .btn-vial.active {
 }
 
 .btn-secondary-vial {
-    background: #e7f1f5;
-    color: var(--navy);
-    border: 0;
+    background: var(--surface-soft);
+    color: var(--sacyr-blue);
+    border: 1px solid #C8E7ED;
     border-radius: 12px;
     padding: 12px 18px;
     font-weight: 700;
     cursor: pointer;
+    font-family: inherit;
 }
 
 .btn-danger-vial {
-    background: #fff0ee;
+    background: var(--danger-bg);
     color: var(--danger);
-    border: 1px solid #fcdad6;
+    border: 1px solid var(--sacyr-coral);
     border-radius: 10px;
     padding: 8px 14px;
     font-weight: 700;
     cursor: pointer;
+    font-family: inherit;
 }
 
-/* El contenido principal se expande para empujar el footer abajo */
 main.app-main {
     max-width: 1080px;
     width: 100%;
-    margin: 20px auto 40px auto;
+    margin: 20px auto 40px;
     padding: 0 16px;
     flex: 1;
 }
 
-/* Banner Hero */
+
+/* Banner principal */
+
 .hero {
-    background: linear-gradient(120deg, #103653f2, #007f80e0);
+    background: linear-gradient(120deg, var(--sacyr-blue) 0%, #075A80 100%);
     color: #fff;
     border-radius: 20px;
     padding: 24px;
@@ -182,10 +208,10 @@ main.app-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 10px 28px rgba(16, 54, 83, 0.14);
+    box-shadow: 0 10px 28px rgba(0, 44, 88, 0.16);
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
     .hero {
         padding: 38px;
         min-height: 240px;
@@ -215,11 +241,11 @@ main.app-main {
 }
 
 .card-vial {
-    background: #fff;
-    border: 1px solid #e1eaf0;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 18px;
     padding: 18px;
-    box-shadow: 0 5px 20px #17364a0a;
+    box-shadow: 0 5px 20px rgba(0, 44, 88, 0.05);
 }
 
 .card-vial h3 {
@@ -240,8 +266,8 @@ main.app-main {
 
 .pill {
     display: inline-block;
-    background: #e6f7f4;
-    color: #087e72;
+    background: #E4F6FA;
+    color: var(--sacyr-blue);
     padding: 6px 12px;
     border-radius: 99px;
     font-size: 12px;
@@ -259,7 +285,9 @@ main.app-main {
     width: 100%;
 }
 
-/* Selector de categorías en tarjetas */
+
+/* Selector de categorías */
+
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -268,26 +296,30 @@ main.app-main {
 }
 
 .category-option {
-    background: #fff;
-    border: 2px solid #dbe6ed;
+    background: var(--surface);
+    border: 2px solid var(--border);
     border-radius: 16px;
     padding: 14px;
     cursor: pointer;
     transition: all 0.15s ease;
     text-align: left;
+    color: var(--ink);
+    font-family: inherit;
 }
 
 .category-option:hover {
-    border-color: var(--teal);
+    border-color: var(--sacyr-aqua);
 }
 
 .category-option.selected {
-    border-color: var(--teal);
-    background: #effaf8;
-    box-shadow: 0 4px 14px rgba(0, 150, 136, 0.14);
+    border-color: var(--sacyr-aqua);
+    background: var(--surface-soft);
+    box-shadow: 0 4px 14px rgba(0, 175, 210, 0.17);
 }
 
-/* Pantalla de Pregunta y Cronómetro */
+
+/* Pantalla de preguntas y cronómetro */
+
 .topline {
     display: flex;
     justify-content: space-between;
@@ -297,14 +329,14 @@ main.app-main {
 }
 
 .timer-badge {
-    background: linear-gradient(135deg, #fff0ee 0%, #ffe3e0 100%);
+    background: linear-gradient(135deg, #FFF3F0 0%, #FFE5E3 100%);
     color: var(--danger);
     padding: 12px 28px;
     border-radius: 99px;
     font-size: 32px;
     font-weight: 900;
-    border: 3px solid #fcdad6;
-    box-shadow: 0 6px 20px rgba(229, 107, 96, 0.3);
+    border: 3px solid var(--sacyr-coral);
+    box-shadow: 0 6px 20px rgba(244, 131, 130, 0.20);
     transition: all 0.15s ease-in-out;
     letter-spacing: -1px;
     display: inline-flex;
@@ -312,7 +344,7 @@ main.app-main {
     gap: 8px;
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
     .timer-badge {
         font-size: 40px;
         padding: 14px 34px;
@@ -321,19 +353,18 @@ main.app-main {
 }
 
 .timer-badge.critical {
-    background: linear-gradient(135deg, var(--danger) 0%, #c54a3f 100%);
+    background: var(--danger);
     color: #fff;
     transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(229, 107, 96, 0.8);
+    box-shadow: 0 0 25px rgba(173, 52, 58, 0.44);
     animation: pulseTimer 0.6s infinite alternate;
-    border-color: #ffb5ad;
+    border-color: var(--sacyr-coral);
 }
 
 @keyframes pulseTimer {
     from {
         transform: scale(1);
     }
-
     to {
         transform: scale(1.08);
     }
@@ -341,7 +372,7 @@ main.app-main {
 
 .progress-vial {
     height: 9px;
-    background: #e3ebef;
+    background: #DCECF1;
     border-radius: 9px;
     overflow: hidden;
     margin: 16px 0;
@@ -349,14 +380,14 @@ main.app-main {
 
 .progress-vial>div {
     height: 100%;
-    background: var(--teal);
+    background: var(--sacyr-aqua);
     width: 0;
     transition: width 0.25s ease;
 }
 
 .question-media {
     font-size: 48px;
-    background: #eaf5f8;
+    background: var(--surface-soft);
     border-radius: 16px;
     padding: 12px;
     text-align: center;
@@ -377,8 +408,8 @@ main.app-main {
 }
 
 .answer-btn {
-    background: #fff;
-    border: 2px solid #dbe6ed;
+    background: var(--surface);
+    border: 2px solid var(--border);
     text-align: left;
     color: var(--ink);
     padding: 14px 16px;
@@ -388,11 +419,12 @@ main.app-main {
     cursor: pointer;
     transition: border-color 0.15s, background-color 0.15s;
     width: 100%;
+    font-family: inherit;
 }
 
 .answer-btn:hover:not(:disabled) {
-    border-color: var(--teal);
-    background: #f8fcfb;
+    border-color: var(--sacyr-aqua);
+    background: #F0FAFC;
 }
 
 .answer-btn:disabled {
@@ -400,22 +432,22 @@ main.app-main {
 }
 
 .answer-btn.correct {
-    background: #e4f8ef !important;
-    border-color: #20a66b !important;
-    color: #0f5132;
+    background: var(--success-bg) !important;
+    border-color: var(--sacyr-matcha) !important;
+    color: var(--success);
 }
 
 .answer-btn.wrong {
-    background: #fff0ee !important;
-    border-color: var(--danger) !important;
-    color: #842029;
+    background: var(--danger-bg) !important;
+    border-color: var(--sacyr-coral) !important;
+    color: var(--danger);
 }
 
 .feedback-box {
     padding: 14px 16px;
     border-radius: 12px;
-    background: #eff8f7;
-    border-left: 4px solid var(--teal);
+    background: var(--surface-soft);
+    border-left: 4px solid var(--sacyr-aqua);
     margin: 14px 0 4px;
     line-height: 1.5;
     font-size: 14px;
@@ -425,14 +457,25 @@ main.app-main {
     display: block;
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #d7e3eb;
+    border: 1px solid var(--border);
     border-radius: 10px;
     margin: 6px 0 14px;
     font: inherit;
-    background: #fff;
+    background: var(--surface);
+    color: var(--ink);
 }
 
-/* Tablas y Pestañas */
+.field:focus-visible,
+button:focus-visible,
+a:focus-visible,
+.category-option:focus-visible {
+    outline: 3px solid var(--sacyr-aqua);
+    outline-offset: 2px;
+}
+
+
+/* Tablas y pestañas */
+
 .tabs-bar {
     display: flex;
     gap: 8px;
@@ -441,19 +484,20 @@ main.app-main {
 }
 
 .tab-btn {
-    background: #e7f1f5;
-    color: var(--navy);
+    background: #E5F3F7;
+    color: var(--sacyr-blue);
     border: 0;
     border-radius: 10px;
     padding: 10px 16px;
     font-weight: 700;
     cursor: pointer;
     font-size: 14px;
+    font-family: inherit;
 }
 
 .tab-btn.active {
-    background: var(--navy);
-    color: var(--yellow);
+    background: var(--sacyr-blue);
+    color: #fff;
 }
 
 .table-responsive-wrapper {
@@ -472,14 +516,13 @@ main.app-main {
 .table-vial th,
 .table-vial td {
     text-align: left;
-    border-bottom: 1px solid #e5edf2;
+    border-bottom: 1px solid var(--border);
     padding: 11px 10px;
     font-size: 13px;
     vertical-align: middle;
 }
 
-@media(min-width: 768px) {
-
+@media (min-width: 768px) {
     .table-vial th,
     .table-vial td {
         font-size: 14px;
@@ -487,25 +530,27 @@ main.app-main {
 }
 
 .table-vial th {
-    color: var(--muted);
+    color: var(--sacyr-blue);
     font-weight: 700;
-    background: #f9fbfd;
+    background: #EFF6F9;
 }
 
-/* Footer moderno */
+
+/* Pie de página */
+
 .app-footer-modern {
     width: 100%;
-    background: #ffffff;
-    border-top: 1px solid #e1eaf0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
     padding: 10px 16px;
     text-align: center;
     margin-top: auto;
-    box-shadow: 0 -2px 10px rgba(16, 54, 83, 0.04);
+    box-shadow: 0 -2px 10px rgba(0, 44, 88, 0.04);
 }
 
 .footer-content {
     font-size: 13px;
-    color: var(--muted, #64798b);
+    color: var(--muted);
     font-weight: 600;
 }
 
@@ -513,8 +558,13 @@ main.app-main {
     .app-footer-modern {
         padding: 6px 12px;
     }
-
     .footer-content {
         font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timer-badge.critical {
+        animation: none;
     }
 }
